@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- #region Header -->
     <header id="site_header" class="d-flex justify-content-center py-2">
       <div class="container-fluid d-flex align-items-center me-4">
         <!-- Logo -->
 
-        <div class="logo d-flex align-items-center">
+        <div class="logo">
           <img
             class="d-none d-lg-block img-fluid"
             src="./assets/img/logo.png"
@@ -36,7 +36,7 @@
           />
           <img
             class="mobile_logo d-lg-none img-fluid"
-            src="./assets/img/mobile-logo.png"
+            src="./assets/img/logo-mobile.png"
             alt=""
           />
         </div>
@@ -81,7 +81,7 @@
                 <i class="fa-solid fa-lg fa-ellipsis-vertical"></i>
               </a>
               <div
-                class="dropdown-menu dropdown-menu-end"
+                class="dropdown-menu dropdown-menu-end position-absolute"
                 aria-labelledby="dropdown"
               >
                 <a class="dropdown-item" href="#">Profilo</a>
@@ -93,6 +93,1075 @@
         </nav>
       </div>
     </header>
+    <!-- #endregion Header -->
+
+    <!-- #region App -->
+    <div class="main_app d-flex">
+      <!-- Sidebar -->
+      <div
+        class="sidebar bg_secondary d-flex flex-column justify-content-between align-items-center p-2"
+      >
+        <ul class="m-0 py-3 px-4">
+          <li class="pb-2">
+            <a class="d-flex align-items-baseline gap-3 p-2" href="#">
+              <i class="fa-solid fa-house"></i>
+              <span class="d-none d-lg-inline">Home</span>
+            </a>
+          </li>
+          <li class="pb-2">
+            <a class="d-flex align-items-baseline gap-3 p-2" href="#">
+              <i class="fa-solid fa-chart-simple pe-1"> </i
+              ><span class="d-none d-lg-inline">Stats</span>
+            </a>
+          </li>
+          <li class="pb-2">
+            <a class="d-flex align-items-baseline gap-3 p-2" href="#">
+              <i class="fa-solid fa-signal"></i>
+              <span class="d-none d-lg-inline">Signals</span></a
+            >
+          </li>
+        </ul>
+
+        <a class="d-flex align-items-baseline gap-3 mb-3 p-2" href="#">
+          <i class="fa-solid fa-gear"></i>
+          <span class="d-none d-lg-inline">Admin</span>
+        </a>
+      </div>
+
+      <!-- Dahboard -->
+      <div class="dashboard">
+        <!-- Dashboard top -->
+        <div
+          class="dashboard_top sticky-top d-md-flex align-items-center p-3 gap-5"
+        >
+          <div class="add_new_student order-last text-lg-center">
+            <button
+              type="button"
+              class="btn btn-outline-light ms-3"
+              data-bs-toggle="offcanvas"
+              href="#add_new_student"
+              role="button"
+              aria-controls="add_new_student"
+            >
+              <span>Nuovo Studente</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <!-- Offcanvas -->
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="add_new_student"
+              aria-labelledby="add_new_studentLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="add_new_studentLabel">
+                  Inserisci un nuovo studente
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <div class="offcanvas-body text-start">
+                <form class="row g-3">
+                  <div class="col-md-6">
+                    <label for="inputName" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="inputName" />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="inputSurname" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="inputSurname" />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">@</span>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder=""
+                        aria-label="email"
+                        aria-describedby="basic-addon1"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="inputPassword" class="form-label"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="inputPassword"
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <label for="inputAddress" class="form-label"
+                      >Indirizzo</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputAddress"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="inputCity" class="form-label"
+                      >Citt&agrave;</label
+                    >
+                    <input type="text" class="form-control" id="inputCity" />
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="inputState" class="form-label">Stato</label>
+                    <select id="inputState" class="form-select">
+                      <option selected="">Scegli...</option>
+                      <option value="1">Austria</option>
+                      <option value="2">Belgio</option>
+                      <option value="3">Bulgaria</option>
+                      <option value="4">Cipro</option>
+                      <option value="5">Croazia</option>
+                      <option value="6">Danimarca</option>
+                      <option value="7">Estonia</option>
+                      <option value="8">Finlandia</option>
+                      <option value="9">Francia</option>
+                      <option value="10">Germania</option>
+                      <option value="11">Grecia</option>
+                      <option value="12">Irlanda</option>
+                      <option value="13">Italia</option>
+                      <option value="14">Lettonia</option>
+                      <option value="15">Lituania</option>
+                      <option value="16">Lussemburgo</option>
+                      <option value="17">Malta</option>
+                      <option value="18">Paesi Bassi</option>
+                      <option value="19">Polonia</option>
+                      <option value="20">Portogallo</option>
+                      <option value="21">Regno Unito</option>
+                      <option value="22">Repubblica Ceca</option>
+                      <option value="23">Romania</option>
+                      <option value="24">Slovacchia</option>
+                      <option value="25">Spagna</option>
+                      <option value="26">Svezia</option>
+                      <option value="27">Svizzera</option>
+                      <option value="28">Ungheria</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-2">
+                    <label for="inputZip" class="form-label">CAP</label>
+                    <input type="text" class="form-control" id="inputZip" />
+                  </div>
+
+                  <div class="col-12">
+                    <label for="inputEmail4" class="form-label">Foto</label>
+                    <div class="input-group mb-3">
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="inputGroupFile02"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Salva</button>
+                    <button type="reset" class="btn btn-danger">
+                      Cancella
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="_plan order-first flex-fill">
+            <div class="d-flex align-items-center gap-2">
+              <span class="fs-2">Matrix Consulting Group</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard body-->
+
+        <div class="_dashboard_body">
+          <div class="container-fluid">
+            <div class="row py-4 px-1">
+              <div class="col-12 col-lg-8">
+                <!-- Next classes -->
+                <div class="card _next_classes mb-4">
+                  <h4 class="card-header">Prossime classi</h4>
+
+                  <div class="card-body">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nome</th>
+                          <th scope="col" class="d-none d-md-table-cell">
+                            Data inizio
+                          </th>
+                          <th scope="col" class="d-none d-md-table-cell">
+                            ROI
+                          </th>
+                          <th scope="col">Stato</th>
+                          <th scope="col">Azioni</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 75
+                          </td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-success rounded fw-normal"
+                              >Done</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId75"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId75"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 75?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 76
+                          </td>
+                          <td class="d-none d-md-table-cell">16 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-success rounded fw-normal"
+                              >Done</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId76"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId76"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 76?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 77
+                          </td>
+                          <td class="d-none d-md-table-cell">17 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-warning rounded fw-normal"
+                              >Process</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId77"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId77"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 77?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 78
+                          </td>
+                          <td class="d-none d-md-table-cell">18 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-success rounded fw-normal"
+                              >Done</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId78"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId78"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 78?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 79
+                          </td>
+                          <td class="d-none d-md-table-cell">19 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-danger rounded fw-normal"
+                              >Failed</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId79"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId79"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 79?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 80
+                          </td>
+                          <td class="d-none d-md-table-cell">12 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-success rounded fw-normal"
+                              >Done</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId80"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId80"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 80?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 81
+                          </td>
+                          <td class="d-none d-md-table-cell">21 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-danger rounded fw-normal"
+                              >Failed</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId81"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId81"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 81?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div
+                              class="_icon_bg d-inline-block text-light rounded-circle text-center me-2"
+                            >
+                              <i class="fa-solid fa-code"></i>
+                            </div>
+                            Classe 82
+                          </td>
+                          <td class="d-none d-md-table-cell">22 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
+                          <td>
+                            <span class="badge bg-success rounded fw-normal"
+                              >Done</span
+                            >
+                          </td>
+                          <td class="d-flex gap-2">
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                            >
+                              <i class="fa-solid fa-pencil"></i>
+                            </button>
+                            <!-- Modal trigger button -->
+                            <button
+                              type="button"
+                              class="btn btn-outline-secondary"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalId82"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+
+                            <!-- Modal Body -->
+                            <div
+                              class="modal fade"
+                              id="modalId82"
+                              tabindex="-1"
+                              data-bs-backdrop="static"
+                              data-bs-keyboard="false"
+                              role="dialog"
+                              aria-labelledby="modalTitleId"
+                              aria-hidden="true"
+                            >
+                              <div
+                                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                role="document"
+                              >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitleId">
+                                      Eliminare classe 82?
+                                    </h5>
+                                    <button
+                                      type="button"
+                                      class="btn-close"
+                                      data-bs-dismiss="modal"
+                                      aria-label="Close"
+                                    ></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    L'azione è irreversibile. Confermare?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button
+                                      type="button"
+                                      class="btn btn-secondary"
+                                      data-bs-dismiss="modal"
+                                    >
+                                      Close
+                                    </button>
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary"
+                                    >
+                                      Save
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="card _faq mb-4">
+                  <h4 class="card-header">F.A.Q.</h4>
+
+                  <div class="card body rounded border-0">
+                    <div class="accordion accordion-flush m-3" id="faq">
+                      <div class="accordion-item border-0 border-bottom">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="false"
+                            aria-controls="collapseOne"
+                          >
+                            Come aggiungere un nuovo studente?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseOne"
+                          class="accordion-collapse collapse"
+                          data-bs-parent="#faq"
+                        >
+                          <div class="accordion-body">
+                            Clicca sul + in alto nella sezione blu
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item border-0 border-bottom">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                          >
+                            Come posso accedere alle informazioni sul mio
+                            account?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseTwo"
+                          class="accordion-collapse collapse"
+                          data-bs-parent="#faq"
+                        >
+                          <div class="accordion-body">
+                            Clicca sull'icona con i 3 pallini in alto a destra.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="accordion-item border-0">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                          >
+                            Posso usare questa dashboard da mobile?
+                          </button>
+                        </h2>
+                        <div
+                          id="collapseThree"
+                          class="accordion-collapse collapse"
+                          data-bs-parent="#faq"
+                        >
+                          <div class="accordion-body">
+                            Certo! la dashboard è responsive per la maggior
+                            parte dei dispositivi.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-4">
+                <!-- Todo -->
+                <div class="card _todo mb-4">
+                  <h4 class="card-header">Todo</h4>
+
+                  <div class="card body rounded border-0">
+                    <ul class="list-group m-3">
+                      <li class="list-group-item">
+                        <input
+                          class="form-check-input me-1"
+                          type="checkbox"
+                          value=""
+                          id="firstCheckboxStretched"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="firstCheckboxStretched"
+                          >Partenza nuove classi</label
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <input
+                          class="form-check-input me-1"
+                          type="checkbox"
+                          value=""
+                          id="secondCheckboxStretched"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="secondCheckboxStretched"
+                          >Lezione su Angular in classe #75</label
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <input
+                          class="form-check-input me-1"
+                          type="checkbox"
+                          value=""
+                          id="thirdCheckboxStretched"
+                        />
+                        <label
+                          class="form-check-label stretched-link"
+                          for="thirdCheckboxStretched"
+                          >Controllare username github studenti</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="card _analytics">
+                  <img
+                    src="./assets/img/stats.jpeg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Utenti attivi</h5>
+                    <p class="card-text">
+                      Lista degli utenti attivi in piattaforma nell'ultimo mese
+                    </p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Gennaio: 1200</li>
+                    <li class="list-group-item">Febbraio: 800</li>
+                    <li class="list-group-item">Marzo: 1000</li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="card-link"
+                      >Visualizza report approfondito</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #endregion App -->
+    </div>
 
     <!-- Bootstrap JS link -->
     <script

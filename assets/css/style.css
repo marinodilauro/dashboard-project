@@ -5,17 +5,18 @@
 }
 
 :root {
-  --db-primary: rgba(5, 30, 52, 1);
-  --db-secondary: rgba(27, 114, 232, 1);
-  --db-secondary_dark: rgba(22, 91, 186, 1);
-  --db-bg_light: rgba(247, 247, 247, 1);
-  --db-bg_lighter: rgba(255, 255, 255, 1);
-  --db-font_light: rgba(255, 255, 255, 1);
-  --db-font_dark: rgba(33, 37, 41, 1);
-  --db-search_bar: rgba(229, 229, 229, 1);
-  --db-bell: rgba(255, 143, 0, 1);
-  --db-table_icon_bg: rgba(242, 101, 81, 1);
-  --db-sidebar_link_hover_bg: rgba(185, 185, 185, 0.5);
+  --color-primary: #0086bb;
+  --color-secondary: #0064bb;
+  --color-accent: #f79420;
+  --color-accent_dark: #f79420;
+  --color-tertiary: #ee404b;
+  --color-bg_light: rgba(247, 247, 247, 1);
+  --color-bg_lighter: rgba(255, 255, 255, 1);
+  --color-font_light: rgba(255, 255, 255, 1);
+  --color-font_dark: rgba(33, 37, 41, 1);
+  --color-search_bar: rgba(229, 229, 229, 1);
+  --color-table_icon_bg: #00a69d;
+  --color-sidebar_link_hover_bg: rgba(185, 185, 185, 0.5);
 }
 
 /* #region :::: UTILITIES RULES :::: */
@@ -27,39 +28,37 @@ body {
 
 ul {
   list-style: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
 }
 
 .bg_primary {
-  background-color: var(--db-primary);
+  background-color: var(--color-primary);
 }
 
-.bg_secondary_dark {
-  background-color: var(--db-secondary_dark);
+.bg_secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg_accent_dark {
+  background-color: var(--color-accent_dark);
 }
 
 .icon_bg {
   width: 30px;
   height: 30px;
   padding: 0.3rem;
-  background-color: var(--db-table_icon_bg);
+  background-color: var(--color-table_icon_bg);
 }
 
 /* #endregion :::: UTILITY RULES :::: */
 
-/* #region :::: HEADER RULES :::: */
+/* #region :::: HEADER :::: */
 
 #site_header {
-
-  background-color: var(--db-bg_lighter);
-
-  .logo {
-    width: 230px;
-    flex-grow: 1;
-  }
+  background-color: var(--color-bg_lighter);
 
   .mobile_logo {
     max-height: 70%;
@@ -72,16 +71,16 @@ ul {
     .search_bar {
       width: 100%;
       height: 45px;
-      background-color: var(--db-search_bar);
+      background-color: var(--color-search_bar);
 
       i {
-        color: var(--db-font_dark);
+        color: var(--color-font_dark);
         padding: 0.5rem;
       }
 
       input[type=search] {
         width: 100%;
-        background-color: var(--db-search_bar);
+        background-color: var(--color-search_bar);
         border: none;
         outline: none;
         font-size: 0.9rem;
@@ -90,21 +89,103 @@ ul {
       }
     }
   }
+}
 
-  .navbar {
+/* #endregion :::: HEADER :::: */
+
+/* #region :::: APP :::: */
+.main_app {
+  height: calc(100% - 86px);
+
+  /* Sidebar */
+  .sidebar {
+    max-width: 150px;
+    min-width: 60px;
+    height: 100%;
+    flex-shrink: 0;
+
+    a {
+      font-weight: bold;
+      color: var(--color-font_light);
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  /* Dashboard */
+  .dashboard {
     flex-grow: 1;
+    height: 100%;
+    overflow-y: auto;
+    background-color: var(--color-bg_light);
 
-    ul {
+    .dashboard_top {
+      background-color: var(--color-secondary);
+      color: var(--color-font_light);
 
-      a {
-        color: var(--db-font_dark);
+      .add_new_student {
+        min-width: 180px;
       }
 
-      .fa-bell {
-        color: var(--db-bell);
+      .offcanvas {
+
+        @media screen and (max-width:991px) {
+          width: 100%;
+        }
+
+        @media screen and (min-width:992px) {
+          width: 50%;
+        }
+      }
+
+      .plan {
+        .badge {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .dashboard_body {
+
+      .next_classes {
+
+        table {
+          thead {
+            th:first-child {
+              width: 60%;
+            }
+          }
+        }
+      }
+
+      .faq {
+
+        .accordion {
+
+          div:nth-child(3) {
+            .accordion-body {
+
+              span {
+                text-decoration: line-through;
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
-/* #endregion :::: HEADER RULES :::: */
+/* #endregion :::: APP :::: */
+
+/* #region :::: MEDIA QUERIES */
+@media(min-width:576px) {
+  .logo {
+    width: 230px;
+    flex-grow: 1;
+  }
+}
+
+/* #endregion :::: MEDIA QUERIES */
